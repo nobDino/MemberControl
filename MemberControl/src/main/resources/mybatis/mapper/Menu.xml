@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.himedia.mc._Menu">
+  <select id="getList" resultType="com.himedia.mc.MenuItem">
+    select id, name, price from menu order by name
+  </select>
+
+  <insert id="insertMenu">
+    insert into menu set name=#{param1}, price=#{param2}
+  </insert>
+
+  <delete id="deleteMenu">
+    delete from menu where id=#{param1}
+  </delete>
+  <update id="updateMenu">
+  	update menu set name=#{param2},price=#{param3} where id=#{param1}
+  </update>
+</mapper>
+
